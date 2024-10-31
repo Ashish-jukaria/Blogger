@@ -1,0 +1,43 @@
+.dashboardeditbutton{
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.dashboarddeletebutton{
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.dashboarddeletebutton:hover{
+    background-color:red;
+
+}
+.dashboardeditbutton:hover{
+    background-color: lightskyblue;
+}
+
+.dashboardelemain{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.dashboardCreateBlog{
+    background-color: #1e97dc;
+    position: fixed;
+    z-index: 99999;
+    right: 10px;
+    width: 20%;
+    padding: 4px;
+    text-align: left;
+}
+.dashboardCreateBlog:hover{
+    cursor: pointer;
+    background: #1ee61a;
+    box-shadow: 2px 2px rgb(10, 10, 10);
+}

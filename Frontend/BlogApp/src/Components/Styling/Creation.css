@@ -1,0 +1,41 @@
+#creationmain{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: auto;
+    right: auto;
+    background-color: #f5a9a9;
+    width: 90%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.creationtitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.creationbody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.creationdescription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.creationimage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.creationinput{
+    padding: 10px 30px;
+}

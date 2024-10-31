@@ -1,0 +1,74 @@
+#blogeditmain{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 999999;
+    width: 200px;
+    left: 50%;
+    height: 90%;
+    max-height: 100vh;
+    width: 90%;
+    align-items: center;
+    color:rgb(15, 15, 15);
+    top:0px;
+    left:5%;
+    right:0px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: rgb(247, 242, 242);
+    
+}
+
+.blogeditimage{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    text-align: left;
+}
+
+.blogeditdescription{
+    flex-direction: column;
+
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    text-align: left;
+
+}
+
+.blogedittitle{
+    flex-direction: column;
+
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    text-align: left;
+}
+
+.blogeditbody{
+    flex-direction: column;
+
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    text-align: left;
+
+}
+
+.label{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.input{
+    padding: 15px 40px;
+}
+
+.editblogconformbutton{
+    background-color: #4cb2dd;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+
