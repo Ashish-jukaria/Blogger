@@ -22,7 +22,7 @@ export default function Dashboard() {
   const [description, setDescription] = useState("");
   const [creation, setCreation] = useState(false);
   async function getUserBlog() {
-    const response = await axios.get("http://localhost:3000/getuserblog", {
+    const response = await axios.get("https://blogger-c93i.onrender.com/getuserblog", {
       headers: {
         token: localStorage.getItem("token"),
       },
@@ -38,7 +38,7 @@ export default function Dashboard() {
   }, []);
   async function handleDelete(blog) {
     const response = await axios.delete(
-      `http://localhost:3000/deleteblog/${blog._id}`,
+      `https://blogger-c93i.onrender.com/deleteblog/${blog._id}`,
       {
         headers: {
           token: localStorage.getItem("token"),
@@ -58,7 +58,7 @@ export default function Dashboard() {
     setImage(blog.image);
     if (edit) {
       const response = await axios.put(
-        `http://localhost:3000/updateblog/${blog._id}`,
+        `https://blogger-c93i.onrender.com/updateblog/${blog._id}`,
         {
           title: title,
           description: description,
@@ -83,7 +83,7 @@ export default function Dashboard() {
 
     if (creation) {
       const response = await axios.post(
-        "http://localhost:3000/createblog",
+        "https://blogger-c93i.onrender.com/createblog",
         createblog,
         {
           headers: {
