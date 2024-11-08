@@ -2,7 +2,7 @@ import useFetch from './Hooks/useFetch'
 import BlogCard from './BlogCard'
 
 export default function Blog() {
-  const {data,loading}=useFetch('http://localhost:3000/getallBlogs')
+  const {data,loading}=useFetch('https://blogger-c93i.onrender.com/getallBlogs')
   const final_data=(data && data.response && data.response.length>0 && data.response.map((item)=>{
     return(
        <>

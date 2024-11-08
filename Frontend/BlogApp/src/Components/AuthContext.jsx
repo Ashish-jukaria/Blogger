@@ -13,7 +13,7 @@ export default function AuthContextProvider({ children }){
     const setLogin=async (data)=>{
         console.log('Login')
         console.log(data)
-        const response=await axios.post("http://localhost:3000/signin",data)
+        const response=await axios.post("https://blogger-c93i.onrender.com/signin",data)
         console.log(response)
         localStorage.setItem("token",response.data.token)
         if(response.status === 200){

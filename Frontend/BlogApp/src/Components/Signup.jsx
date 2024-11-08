@@ -56,7 +56,7 @@ export default function Signup() {
       
     }
     async function  handleSignup(){
-        const response = await axios.post("http://localhost:3000/signup",{username,password,email})
+        const response = await axios.post("https://blogger-c93i.onrender.com/signup",{username,password,email})
         if(response.status === 201){
             navigate('/login')
         }
