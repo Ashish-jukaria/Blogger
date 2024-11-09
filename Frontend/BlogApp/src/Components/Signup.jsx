@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 export default function Signup() {
@@ -6,55 +6,36 @@ export default function Signup() {
     const [password,setPassword] = useState("")
     const [email,setEmail] = useState("")
     const[alert,setAlert]=useState("false")
-    const [message,setmessage]=useState('')
+    const [message,setMessage]=useState('')
     const navigate = useNavigate()
 
-    async function handleChange(e) {
-      const{name,value}=e.target
-      setAlert(true)
-      if (name==='email'){
-        if (value.length<5){
-          setmessage('email is not valid')
-        }
-        else{
-          setEmail(value)
-          setmessage('enter username and password email is valid')
-        }
-
+    useEffect(() => {
+      if (username.length < 5) {
+        setAlert(true);
+        setMessage("Username must be at least 5 characters.");
+      } else if (password.length < 5) {
+        setAlert(true);
+        setMessage("Password must be at least 5 characters.");
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+        setAlert(true);
+        setMessage("Email is not valid.");
+      } else {
+        setAlert(false);
+        setMessage("");
       }
+    }, [username, password, email]);
 
-      if(name==='password'){
-          if (value.length<5){
-            setmessage('password is not valid')
-          }
-  
-          else{
-            setPassword(value)
-            setmessage('password is valid')
-
-          }
-        
-
+    function handleChange(e) {
+      const { name, value } = e.target;
+      if (name === "email") {
+        setEmail(value);
+      } else if (name === "username") {
+        setUsername(value);
+      } else if (name === "password") {
+        setPassword(value);
       }
-
-      if(name==='username'){
-          if (value.length<5){
-            setmessage('username is not valid')
-          }
-
-          else{
-            setUsername(value)
-            setmessage('username is valid')
-          }
-  
-      }
-
-      if(username.length>5 && password.length>5 && email.length>5){
-        setAlert(false)
-      }
-
-      
     }
+
     async function  handleSignup(){
         const response = await axios.post("https://blogger-c93i.onrender.com/signup",{username,password,email})
         if(response.status === 201){

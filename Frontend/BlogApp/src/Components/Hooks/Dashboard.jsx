@@ -6,6 +6,7 @@ import Creation from "../Creation";
 import BlogCard from "../BlogCard";
 import BlogEdit from "../BlogEdit";
 import '../Styling/Dashboard.css'
+import Read from "../Read";
 export default function Dashboard() {
   const [createblog, setcreateBlog] = useState({
     title: "",
@@ -13,6 +14,8 @@ export default function Dashboard() {
     body: "",
     image: "",
   });
+  const [readblog,setReadBlog]=useState('')
+  const [read,setRead]=useState(false)
   const [blogs, setBlogs] = useState([]);
   const [edit, setEdit] = useState(false);
   const [editblogid, seteditblogid] = useState("");
@@ -22,6 +25,7 @@ export default function Dashboard() {
   const [description, setDescription] = useState("");
   const [creation, setCreation] = useState(false);
   async function getUserBlog() {
+    
     const response = await axios.get("https://blogger-c93i.onrender.com/getuserblog", {
       headers: {
         token: localStorage.getItem("token"),
@@ -36,6 +40,13 @@ export default function Dashboard() {
   useEffect(() => {
     getUserBlog();
   }, []);
+
+  function handleClick(blog){
+    window.scrollTo({top: 0, behavior: 'smooth' });
+    setReadBlog(blog)
+    setRead(!read)
+
+  }
   async function handleDelete(blog) {
     const response = await axios.delete(
       `https://blogger-c93i.onrender.com/deleteblog/${blog._id}`,
@@ -98,6 +109,8 @@ export default function Dashboard() {
   }
   return (
     <div className="dashboardmain">
+      {read && <Read setRead={setRead} blog={readblog}/>}
+
       {creation && (
         <Creation createblog={createblog} setcreateBlog={setcreateBlog} />
       )}
@@ -121,7 +134,7 @@ export default function Dashboard() {
               <>
               <button className="dashboardeditbutton" onClick={() => handleEdit(blog)}>Edit</button>
               <button className="dashboarddeletebutton" onClick={() => handleDelete(blog)}>Delete</button>
-                <BlogCard item={blog} />
+                <BlogCard onClick ={()=> handleClick(blog)} item={blog} />
               </>
             )}
           </div>

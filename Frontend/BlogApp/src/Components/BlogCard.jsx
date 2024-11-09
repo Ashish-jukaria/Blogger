@@ -2,9 +2,10 @@ import React from 'react'
 import './Styling/Blog.css'
 
 
-export default function BlogCard({item}) {
+export default function BlogCard({onClick,item}) {
+
   return (
-    <div className='blogs' key={item._id}>
+    <div className='blogs' key={item._id} onClick={onClick}>
     <div className='image'>
      <img className='homeimage' src={item.image} alt={item.title || 'Blog post image'} />
    </div>

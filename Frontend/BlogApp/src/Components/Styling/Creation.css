@@ -4,21 +4,45 @@
     position: fixed;
     left: auto;
     right: auto;
-    background-color: #f5a9a9;
-    width: 90%;
-    height: 90%;
+    background-color: #f9f2f2;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     z-index: 99999;
 }
+@media screen and (max-width: 768px) {
+    #creationmain{
+        width: 100%;
+    }
+    .tiptap-editor{
+        height: 50%;
+    }
 
+    .tiptap-editor>div{
+        height: 10px;
+    }
+    .creationbody{
+        height: 10px;
+    }
+    .toolbar{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
 .creationtitle{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .creationbody{
+    margin: 10px;
     display: flex;
+    height: 50%;
+  width: 100%;
     flex-direction: column;
     align-items: center;
 
@@ -39,3 +63,37 @@
 .creationinput{
     padding: 10px 30px;
 }
+
+
+.tiptap-editor {
+    width: 90%;
+    background: white;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+
+  .toolbar {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .toolbar button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .toolbar button.active {
+    background-color: #c0c0c0;
+  }
+
+

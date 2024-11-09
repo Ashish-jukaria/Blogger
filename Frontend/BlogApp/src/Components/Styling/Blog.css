@@ -6,6 +6,18 @@
     text-align: center;
     grid-column-gap: 10px;
 }
+@media screen and (max-width: 600px) {
+    #homemain{
+        grid-template-columns: 1fr;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+    #homemain{
+        grid-template-columns: 1fr;
+    }
+    
+}
 .blogs{
     cursor: pointer;
     display: grid;

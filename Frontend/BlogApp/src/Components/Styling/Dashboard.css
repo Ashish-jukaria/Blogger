@@ -26,6 +26,12 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
 }
+@media screen and (max-width:600px) {
+    .dashboardelemain{
+        grid-template-columns: 1fr;
+    }
+
+}
 
 .dashboardCreateBlog{
     background-color: #1e97dc;

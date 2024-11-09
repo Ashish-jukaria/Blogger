@@ -1,5 +1,6 @@
 import React from 'react'
 import './Styling/BlogEdit.css'
+import Body from './Body'
 
 export default function BlogEdit({editblogid,setBody,setImage,settitle,setDescription,handleEdit,blog}) {
   return (
@@ -10,15 +11,15 @@ export default function BlogEdit({editblogid,setBody,setImage,settitle,setDescri
       </div>
       <div className='blogeditbody'>
         <label className='label'>Body</label>
-        <input className='input' defaultValue={blog.body} onChange={(e)=>(setBody(e.target.value))}></input>
+        <Body value={blog.body} name={'body'} onChange={(e)=>(setBody(e.target.value))}/>
       </div>
       <div className='blogedittitle'>
         <label className='label'>Title</label>
-        <input className='input' defaultValue={blog.title} onChange={(e)=>(settitle(e.target.value))}></input>
+        <input maxLength={10} className='input' defaultValue={blog.title} onChange={(e)=>(settitle(e.target.value))}></input>
       </div>
       <div className='blogeditdescription'>
         <label className='label'>Description</label>
-        <input className='input' defaultValue={blog.description} onChange={(e)=>(setDescription(e.target.value))}></input>
+        <input maxLength={20} className='input' defaultValue={blog.description} onChange={(e)=>(setDescription(e.target.value))}></input>
       </div>
       <div>
       <button className='editblogconformbutton' onClick={() => handleEdit(blog)}>Confirm</button>
