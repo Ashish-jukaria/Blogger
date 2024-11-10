@@ -7,6 +7,7 @@ import BlogCard from "../BlogCard";
 import BlogEdit from "../BlogEdit";
 import '../Styling/Dashboard.css'
 import Read from "../Read";
+import Loading from "../Loading";
 export default function Dashboard() {
   const [createblog, setcreateBlog] = useState({
     title: "",
@@ -14,6 +15,7 @@ export default function Dashboard() {
     body: "",
     image: "",
   });
+  const [loading,setLoading]=useState('true')
   const [readblog,setReadBlog]=useState('')
   const [read,setRead]=useState(false)
   const [blogs, setBlogs] = useState([]);
@@ -25,14 +27,14 @@ export default function Dashboard() {
   const [description, setDescription] = useState("");
   const [creation, setCreation] = useState(false);
   async function getUserBlog() {
-    
+    setLoading(true)
     const response = await axios.get("https://blogger-c93i.onrender.com/getuserblog", {
       headers: {
         token: localStorage.getItem("token"),
       },
     });
-    console.log(response.data);
     if (response.status == 200) {
+      setLoading(false)
       setBlogs(response.data);
     }
   }
@@ -109,6 +111,7 @@ export default function Dashboard() {
   }
   return (
     <div className="dashboardmain">
+      {loading && <Loading/>}
       {read && <Read setRead={setRead} blog={readblog}/>}
 
       {creation && (
