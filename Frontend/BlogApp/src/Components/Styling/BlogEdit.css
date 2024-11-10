@@ -48,8 +48,8 @@
 }
 
 .blogeditbody{
+    max-height: 300px;
     flex-direction: column;
-
     display: flex;
     margin: 10px;
     align-items: center;

@@ -17,13 +17,13 @@ export default function Creation({createblog,setcreateBlog}) {
     <div id='creationmain'> 
         <div className='creationtitle'>
             <label>Title</label>
-        <input maxLength={10}  className='creationinput' name="title" onChange={handleChange}/>
+        <input maxLength={20}  className='creationinput' name="title" onChange={handleChange}/>
 
         </div>
         <div className='creationdescription' >
         <label>Description</label>
 
-        <input className='creationinput' maxLength={20} name="description" onChange={handleChange}/>
+        <input className='creationinput' maxLength={40} name="description" onChange={handleChange}/>
 
         </div>
         <div className='creationbody'>

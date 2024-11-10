@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-wrap: wrap;
 }
 .creationbody{
     margin: 10px;
@@ -51,6 +52,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-wrap: wrap;
 
 }
 .creationimage{
@@ -74,6 +76,7 @@
     overflow-y: auto;
     font-family: Arial, sans-serif;
     font-size: 16px;
+    height: 100%;
   }
 
 
@@ -81,6 +84,8 @@
     margin-bottom: 10px;
     display: flex;
     gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .toolbar button {

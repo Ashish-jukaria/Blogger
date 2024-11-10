@@ -51,10 +51,93 @@ export default function Toolbar({editor}) {
             className={editor.isActive('paragraph') && editor.getAttributes('paragraph').textAlign === 'right' ? 'active' : ''}>
             Right Align
           </button>
-          <button onClick={() => editor.chain().focus().setLink({ href: prompt('Enter link URL') }).run()} 
-            className={editor.isActive('link') ? 'active' : ''}>
-            Add Link
-          </button>
+          <button
+  onClick={() => {
+    let url = prompt('Enter link URL');
+    
+    // Check if the entered URL starts with a protocol
+    if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+      url = `https://${url}`;
+    }
+    
+    editor.chain().focus().setLink({ href: url }).run();
+  }}
+  className={editor.isActive('link') ? 'active' : ''}
+>
+  Add Link
+</button>
+
+<button
+        onClick={() => {
+          const imageUrl = prompt('Enter image URL');
+          if (imageUrl) {
+            editor.chain().focus().setImage({ src: imageUrl }).run();
+          }
+        }}
+        className={editor.isActive('image') ? 'active' : ''}
+      >
+        Insert Image
+      </button>
+      <button onClick={() => editor.chain().focus().toggleBlockquote().run()} 
+        className={editor.isActive('blockquote') ? 'active' : ''}>
+        Blockquote
+      </button>
+      <button onClick={() => editor.chain().focus().setHorizontalRule().run()} 
+        className={editor.isActive('horizontalRule') ? 'active' : ''}>
+        Horizontal Rule
+      </button>
+
+      <button onClick={() => editor.chain().focus().toggleSubscript().run()} 
+        className={editor.isActive('subscript') ? 'active' : ''}>
+        Subscript
+</button>
+
+<button onClick={() => editor.chain().focus().toggleSuperscript().run()} 
+        className={editor.isActive('superscript') ? 'active' : ''}>
+        Superscript
+</button>
+
+<button onClick={() => {
+  const color = prompt('Enter hex color code for text');
+  if (color) {
+    editor.chain().focus().setColor(color).run();
+  }
+}} className={editor.isActive('textStyle') ? 'active' : ''}>
+  Font Color
+</button>
+
+<button onClick={() => editor.chain().focus().unsetAllMarks().run()} 
+        className="clear-format">
+        Clear Formatting
+</button>
+<button onClick={() => editor.chain().focus().undo().run()} 
+        className="undo">
+        Undo
+</button>
+
+<button onClick={() => editor.chain().focus().redo().run()} 
+        className="redo">
+        Redo
+</button>
+
+<button onClick={() => editor.chain().focus().toggleBlockquote().run()} 
+        className={editor.isActive('blockquote') ? 'active' : ''}>
+        Quote
+</button>
+<button onClick={() => editor.chain().focus().unsetLink().run()} 
+        className={editor.isActive('link') ? 'active' : ''}>
+        Remove Link
+</button>
+<button onClick={() => {
+  const rows = prompt('Enter number of rows');
+  const columns = prompt('Enter number of columns');
+  if (rows && columns) {
+    editor.chain().focus().insertTable({ rows: Number(rows), cols: Number(columns) }).run();
+  }
+}} className="insert-table">
+  Insert Table
+</button>
+
         </div>
   )
 }

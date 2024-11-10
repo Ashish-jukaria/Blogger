@@ -5,10 +5,13 @@
     height: 3em;
     align-items: center;
     text-align: center;
-    background-color: aliceblue;
+    background-color:#003366;
     position: sticky;
     top: 0; left: 0; right: 0;
     z-index: 99999;
+    color: #FFD166;
+    
+
 }
 
 .div2{
@@ -18,10 +21,14 @@
 
 a{
     text-decoration: none;
-    color: black;
+    color:#FFD166;
     margin: 5px;
 }
 
+a:hover{
+ color: #00A5E0;
+    
+}
 
 
 

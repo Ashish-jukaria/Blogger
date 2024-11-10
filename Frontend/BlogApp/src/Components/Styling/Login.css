@@ -2,31 +2,51 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100wh;
-    height: calc(100vh - 100px);
+    width: 20%;
+    height: 400px;
     justify-content: center;
-    background: #d6d3d3;
     cursor: pointer;
+    background-color: #e5d5d5;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    text-align: center;
 
+
+}
+.authtopmain{
+    display: flex;
+    height: calc(100vh - 64px);
 }
 
 
 
 .authinput input{
     
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    width: 400px;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 
 
 .authbutton button{
+    color: white;
+    background-color: #003366;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+
     cursor: pointer;
-    padding: 10px 80px;
 }
 
 .authbutton button:hover{
-    background-color: lightblue;
+    background-color:#00509e;
 }

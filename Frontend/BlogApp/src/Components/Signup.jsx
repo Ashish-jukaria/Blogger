@@ -43,6 +43,7 @@ export default function Signup() {
         }
     }
   return (
+<div className="authtopmain">   
     <div id="authmain">
         <div>
           {alert? message:' '}
@@ -78,5 +79,6 @@ export default function Signup() {
         <button disabled={alert? true:false} onClick={handleSignup}>Signup</button>
       </div>{" "}
     </div>
+    </div> 
   );
 }

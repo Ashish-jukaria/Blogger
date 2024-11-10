@@ -18,9 +18,6 @@ export default function BlogCard({onClick,item}) {
    <div className='description'> 
    {item.description}
    </div>
-
-
-
    </div>
 
 

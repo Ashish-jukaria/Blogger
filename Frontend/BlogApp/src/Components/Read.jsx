@@ -4,7 +4,9 @@ import './Styling/Read.css'
 export default function Read({ setRead, blog }) {
     console.log(blog)
   return (
-    <div className='readmain'>
+    <div className='readmain1'>
+      <div className='readmain'>
+
 
         <div className='readimagediv'>
         <img className='readimage' src={blog.image} alt={blog.title || 'Blog post image'} />
@@ -28,7 +30,8 @@ export default function Read({ setRead, blog }) {
         </div>
 
        
-      
+        </div>
+
     </div>
   )
 }

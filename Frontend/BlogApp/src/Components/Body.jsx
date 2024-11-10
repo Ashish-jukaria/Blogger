@@ -12,12 +12,24 @@ import OrderedList from '@tiptap/extension-ordered-list';
 import ListItem from '@tiptap/extension-list-item';
 import Link from '@tiptap/extension-link';
 import TextAlign from '@tiptap/extension-text-align';
+import Image from '@tiptap/extension-image';
+import Table from '@tiptap/extension-table';
+import TableRow from '@tiptap/extension-table-row';
+import TableCell from '@tiptap/extension-table-cell';
+import TableHeader from '@tiptap/extension-table-header';
+import Highlight from '@tiptap/extension-highlight';
+import HorizontalRule from '@tiptap/extension-horizontal-rule';
+import Blockquote from '@tiptap/extension-blockquote';
 import Toolbar from './Toolbar';
+
+
+
 
 
 export default function Body({name,value,onChange}) {
     const editor = useEditor({
         extensions: [
+          Image,
           StarterKit,
           Bold,
           Italic,
@@ -30,6 +42,14 @@ export default function Body({name,value,onChange}) {
           ListItem,
           Link,
           TextAlign.configure({ types: ['heading', 'paragraph'] }),
+          Image,
+          Table.configure({ resizable: true }),
+          TableRow,
+          TableCell,
+          TableHeader,
+          Highlight,
+          HorizontalRule,
+          Blockquote,
         ],
         content: value,
         onUpdate: ({ editor }) => {

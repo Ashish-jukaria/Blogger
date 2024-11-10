@@ -12,7 +12,10 @@ export default function Login() {
         await auth.setLogin(obj)
     }
   return (
+    <div className='authtopmain'>
+
     <div id='authmain'>
+            
         <div className='authinput'>
             <input onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="username" placeholder='Username' />
         </div>
@@ -24,5 +27,7 @@ export default function Login() {
         </div>
       
     </div>
+    </div>
+
   )
 }

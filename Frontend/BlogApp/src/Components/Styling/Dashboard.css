@@ -15,10 +15,13 @@
 }
 .dashboarddeletebutton:hover{
     background-color:red;
+    color: white;
+
 
 }
 .dashboardeditbutton:hover{
-    background-color: lightskyblue;
+    background-color: rgb(46, 240, 24);
+    color: white;
 }
 
 .dashboardelemain{
