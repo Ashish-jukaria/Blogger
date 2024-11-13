@@ -8,6 +8,7 @@ import BlogEdit from "../BlogEdit";
 import '../Styling/Dashboard.css'
 import Read from "../Read";
 import Loading from "../Loading";
+import { AnimatePresence, motion } from "motion/react"
 export default function Dashboard() {
   const [createblog, setcreateBlog] = useState({
     title: "",
@@ -110,15 +111,24 @@ export default function Dashboard() {
     }
   }
   return (
-    <div className="dashboardmain">
-      {loading && <Loading/>}
+    <motion.div className="dashboardmain">
+            <AnimatePresence>
+
+      
       {read && <Read setRead={setRead} blog={readblog}/>}
+      </AnimatePresence>
+
+      <AnimatePresence>
 
       {creation && (
         <Creation createblog={createblog} setcreateBlog={setcreateBlog} />
       )}
+          </AnimatePresence>
+
       <div className="dashboardCreateBlog" onClick={handleCreation}>{!creation?'Create Blogs':'Confirm'}</div>
       <div className="dashboardelemain">
+      <AnimatePresence>
+
         {blogs.map((blog) => (
           <div key={blog._id}>
             {edit && editblogid === blog._id ? (
@@ -142,7 +152,9 @@ export default function Dashboard() {
             )}
           </div>
         ))}
+        </AnimatePresence>
+
       </div>
-    </div>
+    </motion.div>
   );
 }

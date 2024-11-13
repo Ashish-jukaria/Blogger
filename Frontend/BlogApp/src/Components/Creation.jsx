@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Styling/Creation.css'
 import Body from './Body';
+import { easeInOut, motion } from "motion/react"
 
 export default function Creation({createblog,setcreateBlog}) {
   
@@ -12,9 +13,10 @@ export default function Creation({createblog,setcreateBlog}) {
   }
    
 
-    
+  
   return (
-    <div id='creationmain'> 
+
+    <motion.div  initial={{scale:0, opacity:0}} animate={{scale:1,opacity:1 }} exit={{opacity:0}} transition={{ ease: easeInOut, duration: 1 }}    id='creationmain'> 
         <div className='creationtitle'>
             <label>Title</label>
         <input maxLength={20}  className='creationinput' name="title" onChange={handleChange}/>
@@ -39,6 +41,6 @@ export default function Creation({createblog,setcreateBlog}) {
 
         </div> 
     
-    </div>
+    </motion.div>
   )
 }

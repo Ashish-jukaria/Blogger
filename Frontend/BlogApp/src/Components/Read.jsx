@@ -1,10 +1,11 @@
 import React from 'react'
 import './Styling/Read.css'
+import { easeInOut, motion } from "motion/react"
 
 export default function Read({ setRead, blog }) {
     console.log(blog)
   return (
-    <div className='readmain1'>
+    <motion.div initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}} exit={{opacity:0,scale:0 ,transition:{duration:0.5}}} transition={{ease:easeInOut,duration:0.5}}  className='readmain1'>
       <div className='readmain'>
 
 
@@ -32,6 +33,6 @@ export default function Read({ setRead, blog }) {
        
         </div>
 
-    </div>
+    </motion.div>
   )
 }

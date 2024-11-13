@@ -7,10 +7,12 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import AuthContextProvider from './Components/AuthContext'
 import ProtectedRoute from './Components/ProtectedRoute'
 import Dashboard from './Components/Hooks/Dashboard'
+import { AnimatePresence, easeIn, easeInOut, motion } from "motion/react"
 function App() {
 
   return (
     <>
+    <motion.div initial={{scale:0,x: -3000, opacity:0}} animate={{scale:1,x:0, opacity:1}} transition={{ease:easeInOut,duration:2}}>
     <BrowserRouter>
     <AuthContextProvider>
     <Navbar/>
@@ -25,6 +27,7 @@ function App() {
       </AuthContextProvider>
 
       </BrowserRouter>
+      </motion.div>
     </>
   )
 }
